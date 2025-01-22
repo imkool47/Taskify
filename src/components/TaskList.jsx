@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { TaskCard } from './TaskCard.jsx';
 
 export const TaskList = () => {
       const [task, setTask] = useState([
@@ -18,12 +19,8 @@ export const TaskList = () => {
     <ul>
         <button className='trigger' onClick={() => setShow(!show)}>Toggle</button>
         { show && task.map((task) => (
-            <li key={task.id} className={task.completed ? "completed" : "incomplete"}>
-                <span>{task.id} - {task.name}</span>
-                <button onClick={() => handleDelete(task.id)}  className='delete'>Delete</button>
-            {/* <button>Mark as {task.completed ? "incomplete" : "complete"}</button> */}
-            </li> 
-            ))}
+            <TaskCard key={task.id} task={task} handleDelete={handleDelete}/>
+        ))}
         </ul>
     </>
   )
