@@ -22,6 +22,18 @@ export const TaskList = () => {
             <TaskCard key={task.id} task={task} handleDelete={handleDelete}/>
         ))}
         </ul>
+        <div className="box success">
+          <p className="title">Lorem ipsum dolor sit amet.</p>
+          <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, tempora?</p>
+        </div>
+        <div className="box warning">
+          <p className="title">Lorem ipsum dolor sit amet.</p>
+          <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, tempora?</p>
+        </div>
+        <div className="box alert">
+          <p className="title">Lorem ipsum dolor sit amet.</p>
+          <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, tempora?</p>
+        </div>
     </>
   )
 }
