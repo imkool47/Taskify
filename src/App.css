@@ -1,0 +1,104 @@
+.App {
+  text-align: center;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05); /* Subtle hover effect */
+}
+
+button.delete {
+  background-color: #e63946;
+}
+
+button.delete:hover {
+  background-color: #d62839; /* Slightly darker hover effect */
+}
+
+button.trigger {
+  background-color: #0077b6;
+}
+
+button.trigger:hover {
+  background-color: #005f87;
+}
+
+ul {
+  list-style-type: none;
+  padding: 12px 12px 12px 12px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 8px;
+  background: #024950;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  margin: 8px 8px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  /* background: #D1E8E2; */
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08); */
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+li:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.completed {
+  border-left: 4px solid #2a9d8f; /* Green for completed tasks */
+}
+
+.incomplete {
+  border-left: 4px solid #e76f51; /* Red for incomplete tasks */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #024950; */
+  /* color: white; */
+  padding: 10px 20px;
+  height: 60px;
+  border-bottom: #2a9d8f 2px solid;
+  /* box-shadow: #0FA4AF 0px 4px 6px;
+  position: relative; */
+  /* z-index: 10; */
+  overflow: hidden;
+}
+
+.logo{
+  height: 100px;
+  width: auto;
+  display: block;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #0FA4AF ;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.home-link:hover{
+  color: #116466;
+}
