@@ -7,8 +7,8 @@ export const BoxCard = ({result, children}) => {
     <div className={show ? "" : "hidden"}>
         <div className={`box ${result}`}>
         {children}
-        </div>
         <button onClick={() => setShow(!show)} className="trigger">Hide</button>
+        </div>
     </div>
   )
 }

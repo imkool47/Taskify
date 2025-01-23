@@ -15,28 +15,28 @@ export const TaskList = () => {
     }
 
   return (
-    <> 
-    <h1>Task List</h1>
-    <ul>
-        <button className='trigger' onClick={() => setShow(!show)}>Toggle</button>
-        { show && task.map((task) => (
-            <TaskCard key={task.id} task={task} handleDelete={handleDelete}/>
-        ))}
+    <div className='tasklist'> 
+      <h1>Task List</h1>
+        <ul>
+            <button className='trigger' onClick={() => setShow(!show)}>Toggle</button>
+            { show && task.map((task) => (
+                <TaskCard key={task.id} task={task} handleDelete={handleDelete}/>
+            ))}
         </ul>
-        <BoxCard result="success">
-              <p className="title">Lorem ipsum dolor sit amet.</p>
-              <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, tempora?</p>
-        </BoxCard>
-        
-        <BoxCard result="alert">
-              <p className="title">Lorem ipsum dolor sit amet.</p>
-              <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, tempora?</p>
-        </BoxCard>
+            <BoxCard result="success">
+                  <p className="title">Lorem ipsum dolor sit amet.</p>
+                  <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, tempora?</p>
+            </BoxCard>
+            
+            <BoxCard result="alert">
+                  <p className="title">Lorem ipsum dolor sit amet.</p>
+                  <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, tempora?</p>
+            </BoxCard>
 
-        <BoxCard result="warning">
-              <p className="title">Lorem ipsum dolor sit amet.</p>
-              <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, tempora?</p>
-        </BoxCard>
-    </>
+            <BoxCard result="warning">
+                  <p className="title">Lorem ipsum dolor sit amet.</p>
+                  <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, tempora?</p>
+            </BoxCard>
+    </div>
   )
 }
