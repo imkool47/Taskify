@@ -1,7 +1,9 @@
+import "./Footer.css";
+
 export const Footer = () => {
   return (
     <footer>
-        <p> 2025 - Taskify</p>
+      <p> 2025 - Taskify</p>
     </footer>
-  )
-}
+  );
+};
