@@ -1,9 +1,10 @@
 import "./TaskCard.css";
+import styles from "./TaskCard.module.css"
 
-export const TaskCard = ( {task, handleDelete} ) => {
+export const TaskCard = ({ task, handleDelete }) => {
   return (
     <li className={`taskcard ${task.completed ? "completed" : "incomplete"}`}>
-                <span>{task.id} - {task.name}</span>
+                <span className={styles.title}>{task.id} - {task.name}</span>
                 <button onClick={() => handleDelete(task.id)}  className='delete'>Delete</button>
             {/* <button>Mark as {task.completed ? "incomplete" : "complete"}</button> */}
     </li> 
