@@ -11,13 +11,21 @@ export const TaskList = () => {
   ]);
   const [show, setShow] = useState(true);
 
+  const styles = {
+    color: "#be3434",
+    border: "1px solid #be3434",
+    borderRadius: "5px",
+    fontSize: "28px",
+    padding: "20px"
+  }
+
   function handleDelete(id) {
     setTask(task.filter((task) => id !== task.id));
   }
 
   return (
     <div className="tasklist">
-      <h1>Task List</h1>
+      <h1 style={styles}>Task List</h1>
       <ul>
         <button className="trigger" onClick={() => setShow(!show)}>
           Toggle
@@ -48,5 +56,5 @@ export const TaskList = () => {
         </p>
       </BoxCard>
     </div>
-  );
-};
+  )
+}
