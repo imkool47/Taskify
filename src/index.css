@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-  font-family: Poppins, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0px;
   padding: 0px;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 main {
@@ -20,6 +20,23 @@ main {
   --theme-button: #0f3460;
 }
 
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
 li {
   list-style: none;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  border: 0px;
+  /* background-color: darkslateblue; */
 }
