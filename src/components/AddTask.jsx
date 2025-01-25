@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./AddTask.css";
 
 export const AddTask = ({ tasks, setTasks }) => {
-  const [taskValue, setTaskValue] = useState("");
+  // const [taskValue, setTaskValue] = useState("");
   const [progress, setProgress] = useState(false);
+  const taskRef = useRef("");
 
-  const handleChange = (event) => {
-    setTaskValue(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setTaskValue(event.target.value);
+  // };
 
   const handelReset = () => {
-    setTaskValue("");
+    // setTaskValue("");
+    taskRef.current.value = "";
     setProgress(false);
   };
 
@@ -18,7 +20,7 @@ export const AddTask = ({ tasks, setTasks }) => {
     event.preventDefault();
     const task = {
       id: Math.floor(Math.random() * 100000),
-      name: taskValue,
+      name: taskRef.current.value,
       completed: Boolean(progress),
     };
     setTasks([...tasks, task]);
@@ -29,13 +31,12 @@ export const AddTask = ({ tasks, setTasks }) => {
     <section className="addtask">
       <form onSubmit={handleSubmit}>
         <input
-          onChange={handleChange}
           type="text"
           name="task"
           id="task"
           placeholder="Task Name"
           autoComplete="off"
-          value={taskValue}
+          ref={taskRef}
         />
 
         <select
@@ -51,7 +52,7 @@ export const AddTask = ({ tasks, setTasks }) => {
           Reset
         </span>
       </form>
-      <p>{taskValue}</p>
+      <p>{taskRef.current.value}</p>
     </section>
   );
 };
