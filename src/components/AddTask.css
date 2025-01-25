@@ -55,4 +55,11 @@
   color: #ffffff;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  border: 0px;
+}
+
+.reset:hover {
+  transform: scale(1.05); /* Subtle hover effect */
 }
