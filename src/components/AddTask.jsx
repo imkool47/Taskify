@@ -36,6 +36,7 @@ export const AddTask = ({ tasks, setTasks }) => {
           id="task"
           placeholder="Task Name"
           autoComplete="off"
+          maxLength="25"
           ref={taskRef}
         />
 
