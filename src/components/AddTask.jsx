@@ -1,59 +1,46 @@
-import { useRef, useState } from "react";
-import "./AddTask.css";
+export const AddTask = ({ tasklist, setTasklist, task, setTask }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-export const AddTask = ({ tasks, setTasks }) => {
-  // const [taskValue, setTaskValue] = useState("");
-  const [progress, setProgress] = useState(false);
-  const taskRef = useRef("");
-
-  // const handleChange = (event) => {
-  //   setTaskValue(event.target.value);
-  // };
-
-  const handelReset = () => {
-    // setTaskValue("");
-    taskRef.current.value = "";
-    setProgress(false);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const task = {
-      id: Math.floor(Math.random() * 100000),
-      name: taskRef.current.value,
-      completed: Boolean(progress),
-    };
-    setTasks([...tasks, task]);
-    handelReset();
+    if (task.id) {
+      const date = new Date();
+      const updatedTasklist = tasklist.map((todo) =>
+        todo.id === task.id
+          ? {
+              id: task.id,
+              name: task.name,
+              time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`,
+            }
+          : todo
+      );
+      setTasklist(updatedTasklist);
+      setTask({});
+    } else {
+      const date = new Date();
+      const newTask = {
+        id: date.getTime(),
+        name: e.target.task.value,
+        time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`,
+      };
+      setTasklist([...tasklist, newTask]);
+      setTask({});
+    }
   };
 
   return (
-    <section className="addtask">
+    <section className="addTask">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="task"
-          id="task"
-          placeholder="Task Name"
+          value={task.name || ""}
           autoComplete="off"
+          placeholder="Add Task"
           maxLength="25"
-          ref={taskRef}
+          onChange={(e) => setTask({ ...task, name: e.target.value })}
         />
-
-        <select
-          onChange={(event) => setProgress(event.target.value)}
-          value={progress}
-        >
-          <option value="false">Pending</option>
-          <option value="true">Completed</option>
-        </select>
-
-        <button type="submit">Add Task</button>
-        <span onClick={handelReset} className="reset">
-          Reset
-        </span>
+        <button type="submit">{task.id ? "Update" : "Add"}</button>
       </form>
-      <p>{taskRef.current.value}</p>
     </section>
   );
 };
